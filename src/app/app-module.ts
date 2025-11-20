@@ -1,20 +1,16 @@
-import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing-module';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router'; // <-- Import RouterModule
 import { App } from './app';
 
 @NgModule({
-  declarations: [
-    App
-  ],
+  declarations: [App],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    RouterModule.forRoot([]) // <-- Add RouterModule with empty routes
   ],
-  providers: [
-    provideBrowserGlobalErrorListeners()
-  ],
-  bootstrap: [App]
+  bootstrap: [App],
 })
 export class AppModule { }
